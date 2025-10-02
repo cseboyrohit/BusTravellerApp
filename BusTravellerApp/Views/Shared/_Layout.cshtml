@@ -1,0 +1,157 @@
+﻿@* Shared layout for all pages *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+          rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/css/style.css" />
+    <title>Bus Treval</title>
+</head>
+<body>
+    <nav>
+        <div class="nav__header">
+            <div class="nav__logo">
+                <a asp-controller="Home" asp-action="Index" class="logo">
+                    Bus<span class="text-danger">Traveller</span>
+                </a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#tour">TOUR</a></li>
+            <li><a href="#package">PACKAGE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#">BOOK TRIP</a></li>
+        </ul>
+        <div class="nav__btns">
+            <a asp-controller="Booking" asp-action="Create" class="btn btn-primary">
+                BOOK TRIP
+            </a>
+        </div>
+    </nav>
+    <header id="home">
+        <div class="header__container">
+            <div class="header__content">
+                <p>BUS YOUR TREVEL JOURNEY</p>
+                <h1>Where Every Bus Ride Feels Magical!</h1>
+                <div class="header__btns">
+                    @* <button class="btn">Book A Trip Now</button> *@
+                    <div class="header__btns">
+                        <a asp-controller="Booking" asp-action="Create" class="btn btn-primary">
+                            Book A Trip Now
+                        </a>
+                    </div>
+                    <a href="#">
+                        <span><i class="ri-play-circle-fill"></i></span>
+                    </a>
+                </div>
+            </div>
+            <div class="header__image">
+                <img src="~/img/bus.png" alt="header" />
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer id="contact">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="#" class="logo">BusTraveller</a>
+                </div>
+                <p>
+                    Explore the world with ease and excitement through our all-in-one
+                    bus travel platform. Your journey begins here — where smooth
+                    planning meets unforgettable road experiences.
+                </p>
+                <ul class="footer__socials">
+                    <li>
+                        <a href="#!"><i class="ri-facebook-fill"></i></a>
+                    </li>
+                    <li>
+                        <a href="#!"><i class="ri-instagram-line"></i></a>
+                    </li>
+                    <li>
+                        <a href="#!"><i class="ri-youtube-line"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <ul class="footer__links">
+                    <a asp-controller="Home" asp-action="Home" class="btn btn-primary">
+                        Home
+                    </a>
+                    <li><a href="#">Bus</a></li>
+                    <li><a href="#">Hotels</a></li>
+                    <li><a href="#">Cruise</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <ul class="footer__links">
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-phone-fill"></i></span>+91 12345 67890
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-record-mail-line"></i></span>
+                            info@BusTraveller
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-map-pin-2-fill"></i></span> Agra, India
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Subscribe</h4>
+                <form action="#!">
+                    <input type="text" placeholder="Enter your email" />
+                    <button class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2025 Code Prashtt. All rights reserved.
+            <p>
+                Distributed by
+                <a class="text-white"
+                   href="https://www.themewagon.com"
+                   target="_blank">ThemeWagon</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- ✅ ScrollReveal FIRST -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ✅ Swiper SECOND -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- ✅ Your custom site.js LAST -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
